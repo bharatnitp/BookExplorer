@@ -33,7 +33,6 @@ class ViewController: UIViewController {
         
         tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCellReuseId")
         tableView.register(UINib(nibName: "BookDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "BookDetailTableViewCellReuseId")
-        tableView.register(UINib(nibName: "SpinnerTableViewCell", bundle: nil), forCellReuseIdentifier: "SpinnerTableViewCellReuseId")
         
     }
 }
@@ -53,7 +52,7 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         //return  bookModel.bookList.count
-        return tableCount;
+        return tableCount + 1;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,10 +60,20 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            return 200.0
+        }
+        
         return 100.0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section == 0 {
+            return 0
+        }
+        
         return 16.0
     }
     
@@ -88,9 +97,18 @@ extension ViewController: UITableViewDataSource {
 //                cell?.bookImageView.loadHTMLString(image!, baseURL: nil)
 //            }
 //        }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookDetailTableViewCellReuseId", for: indexPath) as? BookDetailTableViewCell
-        cell?.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
-        return cell!
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCellReuseId", for: indexPath) as? HeaderTableViewCell
+            //cell?.coverImageView.image = UIImage(named: "placeholder")
+            cell?.coverImageView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+            cell?.titleTextLabel.text = "Amazing Books..."
+            return cell!
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BookDetailTableViewCellReuseId", for: indexPath) as? BookDetailTableViewCell
+            cell?.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
+            return cell!
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

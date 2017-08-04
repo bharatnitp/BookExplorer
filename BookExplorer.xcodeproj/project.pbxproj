@@ -17,8 +17,6 @@
 		AD023FBC1F3465C80099DEF4 /* BookDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD023FB11F3465C80099DEF4 /* BookDetailTableViewCell.xib */; };
 		AD023FBD1F3465C80099DEF4 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD023FB21F3465C80099DEF4 /* BookModel.swift */; };
 		AD023FBE1F3465C80099DEF4 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD023FB31F3465C80099DEF4 /* ServiceRequest.swift */; };
-		AD023FBF1F3465C80099DEF4 /* SpinnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD023FB41F3465C80099DEF4 /* SpinnerTableViewCell.swift */; };
-		AD023FC01F3465C80099DEF4 /* SpinnerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD023FB51F3465C80099DEF4 /* SpinnerTableViewCell.xib */; };
 		AD023FC31F34668B0099DEF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD023FC21F34668B0099DEF4 /* Main.storyboard */; };
 		AD023FCA1F34674B0099DEF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD023FC91F34674B0099DEF4 /* LaunchScreen.storyboard */; };
 		AD023FCC1F3467740099DEF4 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD023FCB1F3467740099DEF4 /* info.plist */; };
@@ -37,8 +35,6 @@
 		AD023FB11F3465C80099DEF4 /* BookDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookDetailTableViewCell.xib; path = BookExplorer/BookDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		AD023FB21F3465C80099DEF4 /* BookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookModel.swift; path = BookExplorer/BookModel.swift; sourceTree = SOURCE_ROOT; };
 		AD023FB31F3465C80099DEF4 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRequest.swift; path = BookExplorer/ServiceRequest.swift; sourceTree = SOURCE_ROOT; };
-		AD023FB41F3465C80099DEF4 /* SpinnerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpinnerTableViewCell.swift; path = BookExplorer/SpinnerTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		AD023FB51F3465C80099DEF4 /* SpinnerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpinnerTableViewCell.xib; path = BookExplorer/SpinnerTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		AD023FC21F34668B0099DEF4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = BookExplorer/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		AD023FC91F34674B0099DEF4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = BookExplorer/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		AD023FCB1F3467740099DEF4 /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = info.plist; path = BookExplorer/info.plist; sourceTree = SOURCE_ROOT; };
@@ -124,8 +120,6 @@
 				AD023FAD1F3465C80099DEF4 /* HeaderTableViewCell.xib */,
 				AD023FB01F3465C80099DEF4 /* BookDetailTableViewCell.swift */,
 				AD023FB11F3465C80099DEF4 /* BookDetailTableViewCell.xib */,
-				AD023FB41F3465C80099DEF4 /* SpinnerTableViewCell.swift */,
-				AD023FB51F3465C80099DEF4 /* SpinnerTableViewCell.xib */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -210,7 +204,6 @@
 				AD023FCA1F34674B0099DEF4 /* LaunchScreen.storyboard in Resources */,
 				AD023FCC1F3467740099DEF4 /* info.plist in Resources */,
 				AD4064BA1F34637200CF01FD /* Assets.xcassets in Resources */,
-				AD023FC01F3465C80099DEF4 /* SpinnerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +269,6 @@
 				AD023FB91F3465C80099DEF4 /* ViewController.swift in Sources */,
 				AD023FB71F3465C80099DEF4 /* HeaderTableViewCell.swift in Sources */,
 				AD023FB61F3465C80099DEF4 /* BookListModel.swift in Sources */,
-				AD023FBF1F3465C80099DEF4 /* SpinnerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
