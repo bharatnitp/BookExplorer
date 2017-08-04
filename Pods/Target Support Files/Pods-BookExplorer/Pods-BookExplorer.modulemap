@@ -1,0 +1,6 @@
+framework module Pods_BookExplorer {
+  umbrella header "Pods-BookExplorer-umbrella.h"
+
+  export *
+  module * { export * }
+}
