@@ -50,7 +50,6 @@ extension BookListViewController: UITableViewDelegate {
 extension BookListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return  bookModel.bookList.count + 1
-        //return tableCount + 1;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -115,7 +114,7 @@ extension BookListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == bookModel.bookList.count {
+        if ((bookModel.nextPage?.characters.count ?? 0) > 0) && indexPath.section == bookModel.bookList.count {
             self.showContentLoadingIndicator()
             isPagingEnabled = true
             self.fetchNextPageContent()

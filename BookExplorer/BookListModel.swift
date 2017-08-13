@@ -20,7 +20,8 @@ class BookListModel: NSObject {
             if error == nil {
                 if let json = json {
                     
-                    self.metadata = json["metadata"]?.stringValue
+                    self.metadata = json["metadata"]?.stringValue ?? ""
+                    self.nextPage = json["nextPage"]?.stringValue ?? ""
                     if let consumables = json["consumables"] as? [[String : AnyObject]] {
                         self.parseAndStoreBookModel(consumables)
                     }
