@@ -13,12 +13,10 @@ class BookListModel: NSObject {
     var bookList = [BookModel]()
     var metadata: String?
     var nextPage: String?
-    var number = 1000
     var serviceRequest = ServiceRequest()
     
     func getBookList(completion: @escaping (Bool, Error?) -> ()) {
-        let url = "http://api.storytelbridge.com/consumables/list/1"
-        serviceRequest.getBookListRequest(url: url, method: "GET", nextPage: self.nextPage) { (json, response, error) in
+        serviceRequest.getBookListRequest(nextPage: self.nextPage) { (json, response, error) in
             if error == nil {
                 if let json = json {
                     
@@ -47,9 +45,21 @@ class BookListModel: NSObject {
             
             let bookModel = BookModel()
             
-            bookModel.authors =  authors?.reduce("", {(authorsString, author) in ((author["name"] as? String) ?? "" + authorsString)})
+             authors?.forEach({
+                if $0["name"] != nil && !($0["name"]?.isEmpty)! {
+                    bookModel.authors = (bookModel.authors ?? "") + ($0["name"]?.stringValue)! + ","
+                }
+            })
             
-            bookModel.narrators = narrators?.reduce("", {(narratorsString, narattor) in ((narattor["name"] as? String) ?? ""  + narratorsString)})
+            bookModel.authors?.characters.removeLast() // remove last "," character
+            
+            narrators?.forEach({
+                if $0["name"] != nil && !($0["name"]?.isEmpty)! {
+                    bookModel.narrators =  (bookModel.narrators ?? "") + ($0["name"]?.stringValue)! + ","
+                }
+            })
+            
+            bookModel.authors?.characters.removeLast()// remove last "," character
             
             bookModel.coverImageURL = bookMetaData?["cover"]?["url"] as? String
             
@@ -61,7 +71,7 @@ class BookListModel: NSObject {
     func getBookImage(url: String?, completion: @escaping (String?) -> ()) {
         guard let imageUrl = url else {completion(nil); return}
         
-        serviceRequest.getImage(url: imageUrl, method: "GET") { (json, response, error) in
+        serviceRequest.getImage(url: imageUrl) { (json, response, error) in
             if error == nil {
                     completion(json)
                 } else {

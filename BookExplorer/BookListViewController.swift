@@ -8,25 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BookListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var tableCount = 10
     var bookModel = BookListModel()
+    var isPagingEnabled = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerTableViewCells()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        registerTableViewCells()
-        bookModel.getBookList {[weak self](success, error) in
-            if success {
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            }
+        
+        
+        //check for network connectivity
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        if appDelegate?.reachability?.currentReachabilityStatus != .notReachable {
+            fetchNextPageContent()
+        } else {
+            presentAlert()
         }
+        
     }
     
     private func registerTableViewCells() {
@@ -37,22 +41,16 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
-    }
-}
-
-extension ViewController: UITableViewDelegate {
+extension BookListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension BookListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        //return  bookModel.bookList.count
-        return tableCount + 1;
+        return  bookModel.bookList.count + 1
+        //return tableCount + 1;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,24 +77,6 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        
-//        if (authorsText?.characters.count ?? 0) > 0 {
-//            cell?.authorNamesTextLabel.text = "By: " + authorsText!
-//        } else {
-//            cell?.authorNamesTextLabel.text = "By: NA"
-//        }
-//        let narratorText = narrators?.reduce("", {(narratorsString, narattor) in ((narattor["name"] as? String) ?? ""  + narratorsString)})
-//        if narratorText?.characters.count ?? 0 > 0 {
-//            cell?.narratorNamesTextLabel.text = "With: " + narratorText!
-//        } else {
-//            cell?.narratorNamesTextLabel.text = "With: NA"
-//        }
-//        
-//        DataModel.sharedInstance.getBookImage(url: imageURL) { (image) in
-//            DispatchQueue.main.async {
-//                cell?.bookImageView.loadHTMLString(image!, baseURL: nil)
-//            }
-//        }
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCellReuseId", for: indexPath) as? HeaderTableViewCell
             //cell?.coverImageView.image = UIImage(named: "placeholder")
@@ -104,21 +84,46 @@ extension ViewController: UITableViewDataSource {
             cell?.titleTextLabel.text = "Amazing Books..."
             return cell!
         } else {
+            let book = bookModel.bookList[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "BookDetailTableViewCellReuseId", for: indexPath) as? BookDetailTableViewCell
             cell?.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
+            
+            cell?.bookTitleTextLabel.text = book.bookTitle ?? ""
+                
+            if (book.authors?.characters.count ?? 0) > 0 {
+                cell?.authorNamesTextLabel.text = "By: " + book.authors!
+            } else {
+                cell?.authorNamesTextLabel.text = "By: NA"
+            }
+        
+            if (book.authors?.characters.count ?? 0) > 0 {
+                cell?.narratorNamesTextLabel.text = "With: " + book.narrators!
+            } else {
+                cell?.narratorNamesTextLabel.text = "With: NA"
+            }
+            
+            if let imageURL = book.coverImageURL {
+                bookModel.getBookImage(url: imageURL) { (image) in
+                    DispatchQueue.main.async {
+                        cell?.bookImageView.loadHTMLString(image!, baseURL: nil)
+                    }
+                }
+            }
+            
             return cell!
         }
-        
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == tableCount - 1 {
-            self.showContentLoadingIndicator();
-            self.fetchNextPageContent();
+        if indexPath.section == bookModel.bookList.count {
+            self.showContentLoadingIndicator()
+            isPagingEnabled = true
+            self.fetchNextPageContent()
         }
     }
     
-    func showContentLoadingIndicator() {
+    //Show actvity indicator in footerView
+    private func showContentLoadingIndicator() {
         let footerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: 100.0))
         footerView.backgroundColor = UIColor.white
         
@@ -131,23 +136,33 @@ extension ViewController: UITableViewDataSource {
         tableView.tableFooterView = footerView
     }
     
-    func fetchNextPageContent() {
+    //Get the nextpage content from API call
+    fileprivate func fetchNextPageContent() {
          bookModel.getBookList {[weak self] (success, error) in
             if success {
-                self?.tableCount += 10
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
-                }
-            } else {
-                self?.tableCount += 10
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
+                    if (self?.isPagingEnabled)! {
+                        self?.hideContentLoadingIndicator()
+                    }
                 }
             }
         }
     }
     
-    func hideContentLoadingIndicator() {
-        tableView.tableFooterView = UIView();
+    //hide footerview containing activity indicator
+    private func hideContentLoadingIndicator() {
+        tableView.tableFooterView = UIView()
     }
+}
+
+extension BookListViewController {
+    fileprivate func presentAlert() {
+        let alert = UIAlertController(title: "Network Error!", message: "No network connection available...", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
 }

@@ -11,17 +11,32 @@
 		AD023FB61F3465C80099DEF4 /* BookListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD023FAB1F3465C80099DEF4 /* BookListModel.swift */; };
 		AD023FB71F3465C80099DEF4 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD023FAC1F3465C80099DEF4 /* HeaderTableViewCell.swift */; };
 		AD023FB81F3465C80099DEF4 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD023FAD1F3465C80099DEF4 /* HeaderTableViewCell.xib */; };
-		AD023FB91F3465C80099DEF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD023FAE1F3465C80099DEF4 /* ViewController.swift */; };
+		AD023FB91F3465C80099DEF4 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD023FAE1F3465C80099DEF4 /* BookListViewController.swift */; };
 		AD023FBA1F3465C80099DEF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD023FAF1F3465C80099DEF4 /* AppDelegate.swift */; };
 		AD023FBB1F3465C80099DEF4 /* BookDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD023FB01F3465C80099DEF4 /* BookDetailTableViewCell.swift */; };
 		AD023FBC1F3465C80099DEF4 /* BookDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD023FB11F3465C80099DEF4 /* BookDetailTableViewCell.xib */; };
 		AD023FBD1F3465C80099DEF4 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD023FB21F3465C80099DEF4 /* BookModel.swift */; };
-		AD023FBE1F3465C80099DEF4 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD023FB31F3465C80099DEF4 /* ServiceRequest.swift */; };
 		AD023FC31F34668B0099DEF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD023FC21F34668B0099DEF4 /* Main.storyboard */; };
 		AD023FCA1F34674B0099DEF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD023FC91F34674B0099DEF4 /* LaunchScreen.storyboard */; };
-		AD023FCC1F3467740099DEF4 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD023FCB1F3467740099DEF4 /* info.plist */; };
+		AD11743E1F3F5EF9009BADC0 /* datasource.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD11743D1F3F5EF9009BADC0 /* datasource.plist */; };
+		AD1174411F3F5F90009BADC0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11743F1F3F5F90009BADC0 /* Reachability.swift */; };
+		AD1174421F3F5F90009BADC0 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1174401F3F5F90009BADC0 /* ServiceRequest.swift */; };
+		AD1174441F3F5FAB009BADC0 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1174431F3F5FAB009BADC0 /* DataSource.swift */; };
+		AD1174491F3F7516009BADC0 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD1174481F3F7516009BADC0 /* info.plist */; };
 		AD4064BA1F34637200CF01FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4064B41F34637200CF01FD /* Assets.xcassets */; };
+		AD5E09F71F407B2500F45329 /* BookExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E09F61F407B2500F45329 /* BookExplorerTests.swift */; };
+		AD5E09FF1F407B8C00F45329 /* BookListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E09FE1F407B8C00F45329 /* BookListViewControllerTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD5E09F91F407B2500F45329 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADCF0A741F2F9D2B00C2B75A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADCF0A7B1F2F9D2B00C2B75A;
+			remoteInfo = BookExplorer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4AD6AF3BB4B0C3D8EA5DE2EB /* Pods_BookExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,16 +44,23 @@
 		AD023FAB1F3465C80099DEF4 /* BookListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookListModel.swift; path = BookExplorer/BookListModel.swift; sourceTree = SOURCE_ROOT; };
 		AD023FAC1F3465C80099DEF4 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderTableViewCell.swift; path = BookExplorer/HeaderTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		AD023FAD1F3465C80099DEF4 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderTableViewCell.xib; path = BookExplorer/HeaderTableViewCell.xib; sourceTree = SOURCE_ROOT; };
-		AD023FAE1F3465C80099DEF4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = BookExplorer/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		AD023FAE1F3465C80099DEF4 /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookListViewController.swift; path = BookExplorer/BookListViewController.swift; sourceTree = SOURCE_ROOT; };
 		AD023FAF1F3465C80099DEF4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = BookExplorer/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		AD023FB01F3465C80099DEF4 /* BookDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookDetailTableViewCell.swift; path = BookExplorer/BookDetailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		AD023FB11F3465C80099DEF4 /* BookDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookDetailTableViewCell.xib; path = BookExplorer/BookDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		AD023FB21F3465C80099DEF4 /* BookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookModel.swift; path = BookExplorer/BookModel.swift; sourceTree = SOURCE_ROOT; };
-		AD023FB31F3465C80099DEF4 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRequest.swift; path = BookExplorer/ServiceRequest.swift; sourceTree = SOURCE_ROOT; };
 		AD023FC21F34668B0099DEF4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = BookExplorer/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		AD023FC91F34674B0099DEF4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = BookExplorer/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		AD023FCB1F3467740099DEF4 /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = info.plist; path = BookExplorer/info.plist; sourceTree = SOURCE_ROOT; };
+		AD11743D1F3F5EF9009BADC0 /* datasource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = datasource.plist; path = BookExplorer/datasource.plist; sourceTree = SOURCE_ROOT; };
+		AD11743F1F3F5F90009BADC0 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = BookExplorer/Reachability.swift; sourceTree = SOURCE_ROOT; };
+		AD1174401F3F5F90009BADC0 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRequest.swift; path = BookExplorer/ServiceRequest.swift; sourceTree = SOURCE_ROOT; };
+		AD1174431F3F5FAB009BADC0 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = BookExplorer/DataSource.swift; sourceTree = SOURCE_ROOT; };
+		AD1174481F3F7516009BADC0 /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = info.plist; path = BookExplorer/info.plist; sourceTree = SOURCE_ROOT; };
 		AD4064B41F34637200CF01FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = BookExplorer/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		AD5E09F41F407B2500F45329 /* BookExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5E09F61F407B2500F45329 /* BookExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookExplorerTests.swift; sourceTree = "<group>"; };
+		AD5E09F81F407B2500F45329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD5E09FE1F407B8C00F45329 /* BookListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewControllerTests.swift; sourceTree = "<group>"; };
 		ADCF0A7C1F2F9D2B00C2B75A /* BookExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEEBE81E408903CC6C2F0781 /* Pods-BookExplorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookExplorer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookExplorer/Pods-BookExplorer.debug.xcconfig"; sourceTree = "<group>"; };
 		C2E7C53FA643194D9576DE05 /* Pods_BookExplorerDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookExplorerDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +69,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AD5E09F11F407B2500F45329 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADCF0A791F2F9D2B00C2B75A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,11 +107,65 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AD1174261F3F4C64009BADC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD023FAB1F3465C80099DEF4 /* BookListModel.swift */,
+				AD023FB21F3465C80099DEF4 /* BookModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AD1174271F3F4C73009BADC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF0A911F2F9D6C00C2B75A /* TableViewCells */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AD1174281F3F4C7B009BADC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AD023FAE1F3465C80099DEF4 /* BookListViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		AD1174291F3F4CD3009BADC0 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				AD11743D1F3F5EF9009BADC0 /* datasource.plist */,
+				AD1174431F3F5FAB009BADC0 /* DataSource.swift */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		AD11742A1F3F4D0B009BADC0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AD11743F1F3F5F90009BADC0 /* Reachability.swift */,
+				AD1174401F3F5F90009BADC0 /* ServiceRequest.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		AD5E09F51F407B2500F45329 /* BookExplorerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD5E09F61F407B2500F45329 /* BookExplorerTests.swift */,
+				AD5E09F81F407B2500F45329 /* Info.plist */,
+				AD5E09FE1F407B8C00F45329 /* BookListViewControllerTests.swift */,
+			);
+			path = BookExplorerTests;
+			sourceTree = "<group>";
+		};
 		ADCF0A731F2F9D2B00C2B75A = {
 			isa = PBXGroup;
 			children = (
 				ADCF0A7E1F2F9D2B00C2B75A /* BookExplorer */,
 				ADCF0A981F2FB40800C2B75A /* Resources */,
+				AD5E09F51F407B2500F45329 /* BookExplorerTests */,
 				ADCF0A7D1F2F9D2B00C2B75A /* Products */,
 				A94C337E8B61990A61994B7C /* Pods */,
 				3FE3EAD9C2015452A4AE174A /* Frameworks */,
@@ -93,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				ADCF0A7C1F2F9D2B00C2B75A /* BookExplorer.app */,
+				AD5E09F41F407B2500F45329 /* BookExplorerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,14 +184,15 @@
 		ADCF0A7E1F2F9D2B00C2B75A /* BookExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				AD023FAB1F3465C80099DEF4 /* BookListModel.swift */,
-				AD023FAE1F3465C80099DEF4 /* ViewController.swift */,
+				AD1174281F3F4C7B009BADC0 /* Controller */,
+				AD1174271F3F4C73009BADC0 /* View */,
+				AD1174261F3F4C64009BADC0 /* Model */,
+				AD1174291F3F4CD3009BADC0 /* DataSource */,
+				AD11742A1F3F4D0B009BADC0 /* Service */,
 				AD023FAF1F3465C80099DEF4 /* AppDelegate.swift */,
-				AD023FB21F3465C80099DEF4 /* BookModel.swift */,
-				AD023FB31F3465C80099DEF4 /* ServiceRequest.swift */,
-				ADCF0A911F2F9D6C00C2B75A /* TableViewCells */,
 				AD023FC21F34668B0099DEF4 /* Main.storyboard */,
 				AD023FC91F34674B0099DEF4 /* LaunchScreen.storyboard */,
+				AD1174481F3F7516009BADC0 /* info.plist */,
 			);
 			name = BookExplorer;
 			path = BookExplorerDemoApp;
@@ -128,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				AD4064B41F34637200CF01FD /* Assets.xcassets */,
-				AD023FCB1F3467740099DEF4 /* info.plist */,
 			);
 			name = Resources;
 			path = BookExplorerDemoApp;
@@ -137,6 +221,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AD5E09F31F407B2500F45329 /* BookExplorerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD5E09FD1F407B2500F45329 /* Build configuration list for PBXNativeTarget "BookExplorerTests" */;
+			buildPhases = (
+				AD5E09F01F407B2500F45329 /* Sources */,
+				AD5E09F11F407B2500F45329 /* Frameworks */,
+				AD5E09F21F407B2500F45329 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD5E09FA1F407B2500F45329 /* PBXTargetDependency */,
+			);
+			name = BookExplorerTests;
+			productName = BookExplorerTests;
+			productReference = AD5E09F41F407B2500F45329 /* BookExplorerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ADCF0A7B1F2F9D2B00C2B75A /* BookExplorer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADCF0A8E1F2F9D2B00C2B75A /* Build configuration list for PBXNativeTarget "BookExplorer" */;
@@ -167,6 +269,12 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = BharatBhushan;
 				TargetAttributes = {
+					AD5E09F31F407B2500F45329 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = SYQ4UJZV6C;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ADCF0A7B1F2F9D2B00C2B75A;
+					};
 					ADCF0A7B1F2F9D2B00C2B75A = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = SYQ4UJZV6C;
@@ -189,20 +297,29 @@
 			projectRoot = "";
 			targets = (
 				ADCF0A7B1F2F9D2B00C2B75A /* BookExplorer */,
+				AD5E09F31F407B2500F45329 /* BookExplorerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AD5E09F21F407B2500F45329 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADCF0A7A1F2F9D2B00C2B75A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD1174491F3F7516009BADC0 /* info.plist in Resources */,
 				AD023FBC1F3465C80099DEF4 /* BookDetailTableViewCell.xib in Resources */,
 				AD023FC31F34668B0099DEF4 /* Main.storyboard in Resources */,
 				AD023FB81F3465C80099DEF4 /* HeaderTableViewCell.xib in Resources */,
 				AD023FCA1F34674B0099DEF4 /* LaunchScreen.storyboard in Resources */,
-				AD023FCC1F3467740099DEF4 /* info.plist in Resources */,
+				AD11743E1F3F5EF9009BADC0 /* datasource.plist in Resources */,
 				AD4064BA1F34637200CF01FD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,23 +375,70 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AD5E09F01F407B2500F45329 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5E09F71F407B2500F45329 /* BookExplorerTests.swift in Sources */,
+				AD5E09FF1F407B8C00F45329 /* BookListViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADCF0A781F2F9D2B00C2B75A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD023FBE1F3465C80099DEF4 /* ServiceRequest.swift in Sources */,
 				AD023FBD1F3465C80099DEF4 /* BookModel.swift in Sources */,
 				AD023FBB1F3465C80099DEF4 /* BookDetailTableViewCell.swift in Sources */,
 				AD023FBA1F3465C80099DEF4 /* AppDelegate.swift in Sources */,
-				AD023FB91F3465C80099DEF4 /* ViewController.swift in Sources */,
+				AD023FB91F3465C80099DEF4 /* BookListViewController.swift in Sources */,
 				AD023FB71F3465C80099DEF4 /* HeaderTableViewCell.swift in Sources */,
+				AD1174411F3F5F90009BADC0 /* Reachability.swift in Sources */,
 				AD023FB61F3465C80099DEF4 /* BookListModel.swift in Sources */,
+				AD1174441F3F5FAB009BADC0 /* DataSource.swift in Sources */,
+				AD1174421F3F5F90009BADC0 /* ServiceRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AD5E09FA1F407B2500F45329 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADCF0A7B1F2F9D2B00C2B75A /* BookExplorer */;
+			targetProxy = AD5E09F91F407B2500F45329 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		AD5E09FB1F407B2500F45329 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = SYQ4UJZV6C;
+				INFOPLIST_FILE = BookExplorerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BharatBhushan.BookExplorerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookExplorer.app/BookExplorer";
+			};
+			name = Debug;
+		};
+		AD5E09FC1F407B2500F45329 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = SYQ4UJZV6C;
+				INFOPLIST_FILE = BookExplorerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BharatBhushan.BookExplorerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookExplorer.app/BookExplorer";
+			};
+			name = Release;
+		};
 		ADCF0A8C1F2F9D2B00C2B75A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -404,6 +568,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AD5E09FD1F407B2500F45329 /* Build configuration list for PBXNativeTarget "BookExplorerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5E09FB1F407B2500F45329 /* Debug */,
+				AD5E09FC1F407B2500F45329 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		ADCF0A771F2F9D2B00C2B75A /* Build configuration list for PBXProject "BookExplorer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
