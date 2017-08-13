@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  BookExplorerDemoApp
+//  BookListViewController.swift
+//  BookExplorer
 //
 //  Created by Bharat Bhushan on 31/07/17.
 //  Copyright © 2017 BharatBhushan. All rights reserved.

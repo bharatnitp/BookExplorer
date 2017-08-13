@@ -1,6 +1,6 @@
 //
 //  BookDetailTableViewcell.swift
-//  BookExplorerDemoApp
+//  BookExplorer
 //
 //  Created by Bharat Bhushan on 31/07/17.
 //  Copyright © 2017 BharatBhushan. All rights reserved.

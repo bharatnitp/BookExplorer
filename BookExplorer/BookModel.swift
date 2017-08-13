@@ -1,6 +1,6 @@
 //
 //  BookModel.swift
-//  BookExplorerDemoApp
+//  BookExplorer
 //
 //  Created by Bharat Bhushan on 02/08/17.
 //  Copyright © 2017 BharatBhushan. All rights reserved.
