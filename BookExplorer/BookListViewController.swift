@@ -103,8 +103,11 @@ extension BookListViewController: UITableViewDataSource {
             
             if let imageURL = book.coverImageURL {
                 bookModel.getBookImage(url: imageURL) { (image) in
-                    DispatchQueue.main.async {
-                        cell?.bookImageView.loadHTMLString(image!, baseURL: nil)
+                    
+                    if let image  = image {
+                        DispatchQueue.main.async {
+                            cell?.bookImageView.loadHTMLString(image, baseURL: nil)
+                        }
                     }
                 }
             }
